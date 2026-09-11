@@ -334,7 +334,7 @@ data:extend {{
     ingredients = {
         {type = "item", name = "agricultural-tower",   amount = 1},
         {type = "item", name = "landfill",       amount = 20},
-        {type = "item", name = "steel-plate", amount = 50},
+        {type = "item", name = "tungsten-plate", amount = 25},
         {type = "item", name = "aop-biocircuit", amount = 25},
         {type = "item", name = "iron-gear-wheel", amount = 20},
     },
@@ -344,7 +344,7 @@ data:extend {{
     allow_productivity = false,
     surface_conditions = {{property = "pressure", min = 1000, max = 2000}},
     main_product = "aop-greenhouse",
-    categories = {"woodworking"},
+    categories = {"woodworking", "cryogenics"},
     auto_recycle = true
 },
 {

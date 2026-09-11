@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.8
+Date: 2026-09-11
+  mostlys:
+
+  Changes:
+    - Adjusted greenhouse recipe, i hadnt at the time of the hotfix but whatevs im changing it!
+
+  Fixes:
+    - Merged compat fixes for Apia-Carnova and Muria (Thanks wanda-phi!)
+---------------------------------------------------------------------------------------------------
 Version: 2.2.7
 Date: 2026-08-17
   sorry guys:
