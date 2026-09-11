@@ -615,7 +615,7 @@ end
         add_tech_effect("aop-deep-mineral-refining-productivity", {type = "change-recipe-productivity", recipe = "aop-tellurian-crushing", change = 0.05})
     end
 
-     if mods["muria"] then 
+     if mods["Muria"] then
      data.raw.planet["muria"].surface_properties["deep-crustal-stability"] = 3333
     add_crafting_categories("muriatic-solution-separation", {"hydraulics"})
     add_crafting_categories("hydronium-destruction", {"hydraulics"})
