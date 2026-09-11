@@ -866,6 +866,7 @@ data:extend {
     },
     energy_required = 10,
     results = {{type="item", name="aop-unheated-thermal-science-pack", amount=1}},
+    auto_recycle = false,
     allow_productivity = true
   },
   {
@@ -880,6 +881,7 @@ data:extend {
     },
     energy_required = 2,
     results = {{type="item", name="aop-thermal-science-pack", amount=1, ignored_by_stats = 1, ignored_by_productivity = 1}},
+    auto_recycle = false,
     allow_productivity = false,
     allow_quality = false,
   },
@@ -897,6 +899,7 @@ data:extend {
     },
     energy_required = 4,
     results = {{type="item", name="aop-asphalt", amount=10}},
+    auto_recycle = false,
     allow_productivity = false
   },
   {
@@ -914,13 +917,13 @@ data:extend {
     enabled = false,
     ingredients =
     {
-      {type = "item", name = "aop-rubber-sheet", amount = 5},
-      {type = "item", name = "holmium-plate", amount = 5},
+      {type = "item", name = "aop-asphalt", amount = 20},
       {type = "fluid", name = "aop-bitumen", amount = 20},
       {type = "fluid", name = "petroleum-gas", amount = 20},
     },
     energy_required = 10,
     results = {{type="item", name="aop-petrochemical-science-pack", amount=1}},
+    auto_recycle = false,
     allow_productivity = true
   },
   {
@@ -946,6 +949,7 @@ data:extend {
     },
     energy_required = 10,
     results = {{type="item", name="aop-forestry-science-pack", amount=1}},
+    auto_recycle = false,
     allow_productivity = true,
   },
   {
@@ -969,9 +973,8 @@ data:extend {
     },
     energy_required = 20,
     results =
-    {
-      {type = "item", name = "aop-quantistic-science-pack", amount = 5, independent_probability = 0.5},
-    },
+    {{type = "item", name = "aop-quantistic-science-pack", amount = 5, independent_probability = 0.5},},
+    auto_recycle = false,
     allow_productivity = true,
 },
 {
@@ -996,9 +999,8 @@ data:extend {
     },
     energy_required = 20,
     results =
-    {
-      {type = "item", name = "aop-fission-science-pack", amount = 5},
-    },
+    {{type = "item", name = "aop-fission-science-pack", amount = 5},},
+    auto_recycle = false,
     allow_productivity = true,
 },
 {
@@ -1025,18 +1027,12 @@ data:extend {
       {type = "fluid", name = "water", amount = 10}
     },
     results = {{type="item", name="explosives", amount=2}},
+    auto_recycle = false,
     allow_productivity = true
 },
 }
 
 table.insert(data.raw.recipe["big-mining-drill"].ingredients, {type = "item", name = "aop-quicklime",       amount = 10})
-table.insert(data.raw.recipe["supercapacitor"].ingredients, {type = "item", name = "aop-rubber-sheet", amount = 2})
-data.raw.recipe["superconductor"].ingredients = {
-      {type = "item", name = "holmium-plate", amount = 1},
-      {type = "item", name = "copper-plate", amount = 1},
-      {type = "item", name = "plastic-bar", amount = 1},
-      {type = "fluid", name = "aop-bitumen", amount = 5},
-    }
 data.raw.recipe["cliff-explosives"].ingredients = {
       {type = "item", name = "explosives", amount = 10},
       {type = "item", name = "aop-quicklime", amount = 10},

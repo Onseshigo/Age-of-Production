@@ -131,19 +131,11 @@ data:extend{
       },
       {
         type = "unlock-recipe",
-        recipe = "aop-carbon-liquefaction"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-petroleum-gas-dehydrogenation"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "aop-solid-fuel-melting"
-      },
-      {
-        type = "unlock-recipe",
         recipe = "aop-rubber-sheet"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "aop-asphalt"
       },
     },
     prerequisites = {"aop-bitumen-processing"},
@@ -655,8 +647,8 @@ data:extend{
     prerequisites = {"recycling"},
     research_trigger =
     {
-      type = "craft-item",
-      item = "holmium-ore"
+      type = "mine-entity",
+      entities= {"fulgora-sunk-ruin-big", "fulgora-sunk-ruin-medium-tall"}
     }
   },
   {
@@ -853,11 +845,11 @@ data:extend{
         recipe = "aop-petrochemical-science-pack",
       },
     },
-    prerequisites = {"electromagnetic-plant", "aop-petrochemical-facility"},
+    prerequisites = {"aop-petrochemical-facility"},
     research_trigger =
     {
       type = "craft-item",
-      item = "supercapacitor"
+      item = "aop-asphalt"
     }
   },
   {
@@ -937,17 +929,17 @@ data:extend{
   },
   {
     type = "technology",
-    name = "aop-asphalt",
-    icon = "__Age-of-Production-Graphics__/graphics/technology/asphalt.png",
+    name = "aop-carbon-liquefaction",
+    icon = "__Age-of-Production-Graphics__/graphics/technology/carbon-liquefaction.png",
     icon_size = 256,
     effects =
     {
       {
         type = "unlock-recipe",
-        recipe = "aop-asphalt",
+        recipe = "aop-carbon-liquefaction",
       },
     },
-    prerequisites = {"aop-petrochemical-science-pack", "utility-science-pack"},
+    prerequisites = {"coal-liquefaction", "aop-petrochemical-applications"},
     unit =
     {
       count = 500,
@@ -957,7 +949,38 @@ data:extend{
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
         {"space-science-pack", 1},
-        {"utility-science-pack", 1},
+        {"aop-thermal-science-pack", 1},
+        {"aop-petrochemical-science-pack", 1}
+      },
+      time = 60
+    }
+  },
+  {
+    type = "technology",
+    name = "aop-petrochemical-applications",
+    icon = "__Age-of-Production-Graphics__/graphics/technology/petrochemical-applications.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "aop-petroleum-gas-dehydrogenation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "aop-solid-fuel-melting"
+      },
+    },
+    prerequisites = {"aop-petrochemical-science-pack"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
         {"aop-petrochemical-science-pack", 1}
       },
       time = 60
@@ -1069,67 +1092,29 @@ data.raw.technology["nuclear-fuel-reprocessing"].unit =
   },
   time = 30
 }
-data.raw.technology["artillery"].prerequisites = {"military-4", "aop-thermal-science-pack","radar"}
-data.raw.technology["artillery"].unit =
+data.raw.technology["nuclear-fuel-reprocessing"].prerequisites = {"nuclear-power"}
+data.raw.technology["nuclear-fuel-reprocessing"].unit =
 {
-  count = 1500,
+  count = 50,
   ingredients =
   {
     {"automation-science-pack", 1},
-  {"logistic-science-pack", 1},
-  {"chemical-science-pack", 1},
-  {"military-science-pack", 1},
-  {"utility-science-pack", 1},
-  {"space-science-pack", 1},
-  {"aop-thermal-science-pack", 1}
+    {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
+    {"space-science-pack", 1},
+    {"production-science-pack", 1},
+    {"aop-fission-science-pack", 1},
   },
   time = 30
 }
-data.raw.technology["artillery-shell-range-1"].unit =
-{
-  count_formula = "2^(L-1)*1000",
-  ingredients =
-  {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"military-science-pack", 1},
-    {"utility-science-pack", 1},
-    {"space-science-pack", 1},
-    {"aop-thermal-science-pack", 1}
-  },
-  time = 60
-}
-data.raw.technology["artillery-shell-speed-1"].unit =
-{
-  count_formula = "2^(L-1)*1000",
-  ingredients =
-  {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"military-science-pack", 1},
-    {"utility-science-pack", 1},
-    {"space-science-pack", 1},
-    {"aop-thermal-science-pack", 1}
-  },
-  time = 60
-}
-data.raw.technology["artillery-shell-damage-1"].unit =
-{
-  count_formula = "2^(L-1)*1000",
-  ingredients =
-  {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"military-science-pack", 1},
-    {"utility-science-pack", 1},
-    {"space-science-pack", 1},
-    {"aop-thermal-science-pack", 1}
-  },
-  time = 60
-}
+add_science_pack("artillery", { "aop-thermal-science-pack", 1 })
+add_tech_prerequisites("artillery", "aop-thermal-science-pack")
+add_science_pack("artillery-shell-range-1", { "aop-thermal-science-pack", 1 })
+add_tech_prerequisites("artillery-shell-range-1", "aop-thermal-science-pack")
+add_science_pack("artillery-shell-speed-1", { "aop-thermal-science-pack", 1 })
+add_tech_prerequisites("artillery-shell-speed-1", "aop-thermal-science-pack")
+add_science_pack("artillery-shell-damage-1", { "aop-thermal-science-pack", 1 })
+add_tech_prerequisites("artillery-shell-damage-1", "aop-thermal-science-pack")
 data.raw.technology["cliff-explosives"].prerequisites ={"aop-quicklime-explosives","military-science-pack","aop-thermal-science-pack"}
 data.raw.technology["cliff-explosives"].unit =
 {
@@ -1144,10 +1129,37 @@ data.raw.technology["cliff-explosives"].unit =
   },
   time = 30
 }
-add_science_pack("rail-support-foundations", { "aop-thermal-science-pack", 1 })
-add_tech_prerequisites("rail-support-foundations", "aop-thermal-science-pack")
-add_science_pack("rail-support-foundations", { "aop-petrochemical-science-pack", 1 })
-add_tech_prerequisites("rail-support-foundations", "aop-petrochemical-science-pack")
+data.raw.technology["coal-liquefaction"].prerequisites = {"aop-thermal-science-pack"}
+data.raw.technology["coal-liquefaction"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
+    {"space-science-pack", 1},
+    {"aop-thermal-science-pack", 1}
+  },
+  time = 30
+}
+data.raw.technology["rail-support-foundations"].prerequisites ={"aop-petrochemical-science-pack", "utility-science-pack", "aop-thermal-science-pack", "elevated-rail"}
+data.raw.technology["rail-support-foundations"].unit =
+{
+      count = 2000,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1},
+        {"aop-thermal-science-pack", 1},
+        {"aop-petrochemical-science-pack", 1}
+      },
+      time = 30
+    }
 add_science_pack("asteroid-reprocessing", { "aop-thermal-science-pack", 1 })
 add_tech_prerequisites("asteroid-reprocessing", "aop-thermal-science-pack")
 add_science_pack("planet-discovery-aquilo", { "aop-thermal-science-pack", 1 })
@@ -1174,6 +1186,20 @@ data.raw.technology["captivity"].unit =
       },
       time = 60
 }
+data.raw.technology["scrap-recycling-productivity"].prerequisites ={"aop-petrochemical-science-pack", "production-science-pack"}
+data.raw.technology["scrap-recycling-productivity"].unit =
+{
+      count_formula = "1.5^L*500",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"aop-petrochemical-science-pack", 1},
+      },
+      time = 60
+    }
 data.raw.technology["fish-breeding"].prerequisites ={"aop-forestry-science-pack"}
 add_science_pack("fish-breeding", { "aop-forestry-science-pack", 1 })
 add_science_pack("biolab", { "aop-forestry-science-pack", 1 })
@@ -1185,7 +1211,6 @@ add_science_pack("quality-module-3", { "aop-petrochemical-science-pack", 1 })
 add_tech_prerequisites("quality-module-3", "aop-petrochemical-science-pack")
 add_tech_prerequisites("big-mining-drill", "aop-arc-furnace")
 add_tech_prerequisites("fusion-reactor", "aop-tritium-synthesis")
-add_tech_prerequisites("electromagnetic-plant", "aop-bitumen-processing")
 add_tech_effect("metallurgic-science-pack", {type = "unlock-recipe", recipe = "aop-tungsten-plate-heating"})
 add_tech_effect("calcite-processing", {type = "unlock-recipe", recipe = "aop-quicklime"})
 add_tech_effect("tree-seeding", {type = "unlock-recipe", recipe = "aop-wood-planks"})
@@ -1235,3 +1260,8 @@ add_science_pack("railgun-shooting-speed-1", { "aop-thermal-science-pack", 1 })
 add_science_pack("railgun-shooting-speed-1", { "aop-forestry-science-pack", 1 })
 add_science_pack("railgun-shooting-speed-1", { "aop-petrochemical-science-pack", 1 })
 add_science_pack("rocket-part-productivity", { "aop-thermal-science-pack", 1 })
+add_science_pack("rocket-part-productivity", { "aop-petrochemical-science-pack", 1 })
+add_science_pack("stellar-discovery-solar-system-edge", { "aop-thermal-science-pack", 1 })
+add_science_pack("stellar-discovery-solar-system-edge", { "aop-fission-science-pack", 1 })
+add_science_pack("stellar-discovery-solar-system-edge", { "aop-petrochemical-science-pack", 1 })
+add_science_pack("stellar-discovery-solar-system-edge", { "aop-forestry-science-pack", 1 })

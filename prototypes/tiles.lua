@@ -111,7 +111,7 @@ data:extend(
         minable = {mining_time = 0.1, result = "aop-asphalt"},
         mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
         collision_mask = { layers = {ground_tile = true} },
-        walking_speed_modifier = 1.1,
+        walking_speed_modifier = 1.5,
         layer_group = "ground-artificial",
         layer = 15,
         decorative_removal_probability = 1,
@@ -195,7 +195,7 @@ data:extend(
     build_sound = tile_sounds.building.concrete,
     map_color={63, 61, 59},
     scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000},
-    vehicle_friction_modifier = 2,
+    vehicle_friction_modifier = 0,
     trigger_effect = tile_trigger_effects.concrete_trigger_effect()
     }
 })

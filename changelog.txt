@@ -1,4 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.0
+Date: 2026-09-11
+  patch spam go:
+
+  Changes:
+    - Changed Fulgoran progression: Petrochemical science's progression is now separate from em science's.
+    - Superconductor and supercapacitors no longer take bitumen and rubber.
+    - Asphalt tech has been removed and asphalt is now used for the petrochemical science pack recipe.
+    - Separated some recipes that were unlocked with the pc facility into separate techs.
+    - Repositioned some technologies.
+    - Moved scrap productivity to petrochem science.
+
+  Fixes:
+    - Fixed explosive recycling.
+    - Fixed asphalt not speeding vehicles up.
+
+  Notes:
+    - The usual, factories may need to be rebuilt or tweaked.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.8
 Date: 2026-09-11
   mostlys:
