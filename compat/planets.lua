@@ -655,6 +655,7 @@ end
     data.raw.planet["carnova"].surface_properties["deep-crustal-stability"] = 347
     add_crafting_categories("artillery-shell-with-phosphorus", {"ammunition"})
     add_crafting_categories("phosphoric-acid", {"hydraulics"})
+    data.raw.item["aop-unstable-matter"].apia_disable_refresh_recipe = true
     end
 
          if mods["planet-crucible"] then 
