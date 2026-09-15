@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.1
+Date: 2026-09-15
+  Undertale's birthday today:
+
+  Fixes:
+    - Fixed crash with Arig that happens when a mod changes every "furnace" prototype into "assembling-machine".
+---------------------------------------------------------------------------------------------------
 Version: 2.3.0
 Date: 2026-09-11
   patch spam go:

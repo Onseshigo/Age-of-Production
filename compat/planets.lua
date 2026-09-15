@@ -558,7 +558,9 @@ if mods["panglia_planet_assets"] and mods["panglia_planet"] then
 
          if mods["planetaris-arig"] then 
     data.raw.planet["arig"].surface_properties["deep-crustal-stability"] = 2300
+    if data.raw["furnace"]["aop-arc-furnace"] then
     data.raw["furnace"]["aop-arc-furnace"].result_inventory_size = 2
+    end
     add_crafting_categories("planetaris-cactus-wood", {"woodworking"})
     add_crafting_categories("planetaris-advanced-heavy-oil-cracking", {"petrochemistry"})
     end
