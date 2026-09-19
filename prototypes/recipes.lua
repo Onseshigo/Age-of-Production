@@ -1093,3 +1093,8 @@ data.raw.recipe["captive-biter-spawner"].ingredients = {
       {type = "item", name = "aop-biocircuit", amount = 5},
       {type = "fluid", name = "fluoroketone-cold", amount = 100},
     }
+data.raw.recipe["promethium-science-pack"].ingredients = {
+      {type = "item", name = "promethium-asteroid-chunk", amount = 25},
+      {type = "item", name = "aop-biocircuit", amount = 1},
+      {type = "item", name = "biter-egg", amount = 10}
+    }

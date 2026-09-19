@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.2
+Date: 2026-09-19
+  gogo gadget science breaker:
+
+  Changes:
+    - Since quantistic science takes quantum chips, promethium science now takes biocircuits.
+
+  Notes:
+    - Factories breaking? Happens.
+---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 2026-09-15
   Undertale's birthday today:
