@@ -267,6 +267,7 @@ if mods["maraxsis"] then
         add_crafting_categories("plutonium-fuel", {"advanced-centrifuging"})
         add_crafting_categories("cerys-nitric-acid", {"hydraulics"})
         add_crafting_categories("mixed-oxide-fuel-cell", {"advanced-centrifuging"})
+        add_crafting_categories("cerys-mixed-oxide-reactor", {"advanced-centrifuging"})
         add_crafting_categories("mixed-oxide-cell-reprocessing", {"advanced-centrifuging"})
         add_crafting_categories("cerys-nitrogen-rich-mineral-processing", {"synthesis"})
         add_crafting_categories("cerys-lubricant-synthesis", {"synthesis"})
